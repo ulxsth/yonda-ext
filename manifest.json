@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "yonda!",
+  "version": "1.0",
+  "description": "よんだことをツイートします",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+    "128": "icon-128x128.png"
+  }
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ]
+}
