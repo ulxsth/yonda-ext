@@ -6,11 +6,22 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h2>シェア方法を選択</h2>
-  <div class="button-container">
+  <h2>よんだ！</h2>
+  
+  <!-- Twitterシェアボタン -->
+  <div class="share-button-container">
     <button id="tweetButton">Twitterでシェア</button>
-    <button id="mdLinkButton">Markdownリンク</button>
   </div>
+  
+  <!-- Markdownプレビューエリア（初期状態で表示） -->
+  <div id="previewArea">
+    <h3>Markdownリンク</h3>
+    <div id="previewContent" class="preview-box"></div>
+    <div class="action-buttons">
+      <button id="copyButton" class="secondary-button">コピー</button>
+    </div>
+  </div>
+  
   <div id="copyMessage" class="hidden">コピーしました！</div>
   <script src="popup.js"></script>
 </body>

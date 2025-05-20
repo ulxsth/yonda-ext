@@ -2,14 +2,15 @@ body {
   text-align: center;
   margin: 0;
   padding: 20px;
-  width: 280px;
+  width: 320px;
   font-family: sans-serif;
 }
 
-.button-container {
+.share-button-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 15px;
 }
 
 button {
@@ -39,18 +40,15 @@ button:hover {
   background-color: #1a8cd8;
 }
 
-#mdLinkButton {
-  background-color: #6e5494;
-}
-
-#mdLinkButton:hover {
-  background-color: #5a4679;
-}
-
-h2 {
+h2, h3 {
   color: #333;
   margin-top: 0;
   font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 #copyMessage {
@@ -64,4 +62,129 @@ h2 {
 
 .hidden {
   display: none;
+}
+
+/* プレビューエリアのスタイル */
+#previewArea {
+  margin-top: 5px;
+}
+
+.preview-box {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  text-align: left;
+  word-break: break-all;
+  max-height: 100px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.secondary-button {
+  background-color: #6e5494;
+  color: white;
+  font-size: 14px;
+  flex: 0 0 auto;
+  width: 80%;
+}
+
+.secondary-button:hover {
+  background-color: #5a4679;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#tweetButton {
+  background-color: #1DA1F2;
+}
+
+#tweetButton:hover {
+  background-color: #1a8cd8;
+}
+
+#mdLinkButton {
+  background-color: #6e5494;
+}
+
+#mdLinkButton:hover {
+  background-color: #5a4679;
+}
+
+h2, h3 {
+  color: #333;
+  margin-top: 0;
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#copyMessage {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #dff0d8;
+  color: #3c763d;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+/* プレビューエリアのスタイル */
+#previewArea {
+  margin-top: 15px;
+}
+
+.preview-box {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  text-align: left;
+  word-break: break-all;
+  max-height: 100px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.secondary-button {
+  flex: 1;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 14px;
+}
+
+.secondary-button:hover {
+  background-color: #e0e0e0;
+}
+
+.secondary-button.cancel {
+  background-color: #f8f8f8;
+  color: #666;
+}
+
+.secondary-button.cancel:hover {
+  background-color: #e8e8e8;
 }

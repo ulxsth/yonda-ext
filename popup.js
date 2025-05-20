@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', async () => {
   console.log('Popup loaded');
   const tweetButton = document.getElementById('tweetButton');
-  const mdLinkButton = document.getElementById('mdLinkButton');
+  const previewContent = document.getElementById('previewContent');
+  const copyButton = document.getElementById('copyButton');
   const copyMessage = document.getElementById('copyMessage');
+  
+  let currentCopyContent = '';
 
   // 現在のタブの情報を取得
   const getCurrentTab = async () => {
@@ -13,6 +16,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
   };
 
+  // 初期表示時にMarkdownリンクのプレビューを表示
+  (async () => {
+    const { title, url } = await getCurrentTab();
+    const mdLink = `[${title}](${url})`;
+    
+    // プレビューエリアに表示
+    currentCopyContent = mdLink;
+    previewContent.textContent = mdLink;
+  })();
+
   // Twitterでシェアするボタン
   tweetButton.addEventListener('click', async () => {
     const { title, url } = await getCurrentTab();
@@ -20,14 +33,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
     window.open(tweetUrl, '_blank');
   });
-
-  // Markdownリンクを生成してクリップボードにコピーするボタン
-  mdLinkButton.addEventListener('click', async () => {
-    const { title, url } = await getCurrentTab();
-    const mdLink = `[${title}](${url})`;
-    
+  
+  // コピーボタンのイベントリスナー
+  copyButton.addEventListener('click', async () => {
     // クリップボードにコピー
-    await navigator.clipboard.writeText(mdLink);
+    await navigator.clipboard.writeText(currentCopyContent);
     
     // コピー完了メッセージを表示
     copyMessage.classList.remove('hidden');
