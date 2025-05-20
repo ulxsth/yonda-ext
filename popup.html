@@ -2,11 +2,16 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Sample Popup</title>
+  <title>よんだ！</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <button id="tweetButton">よんだ！</button>
+  <h2>シェア方法を選択</h2>
+  <div class="button-container">
+    <button id="tweetButton">Twitterでシェア</button>
+    <button id="mdLinkButton">Markdownリンク</button>
+  </div>
+  <div id="copyMessage" class="hidden">コピーしました！</div>
   <script src="popup.js"></script>
 </body>
 </html>
